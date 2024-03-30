@@ -21,13 +21,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
 
+    BottomNavigationView bottomNavigationView;
+    RelativeLayout relativeLayout;
+
+    // Define constant IDs for menu items
     private static final int NAV_HOME = R.id.nav_home;
     private static final int NAV_MESSAGE = R.id.nav_message;
     private static final int NAV_CHANGE_KEY = R.id.nav_changeKey;
     private static final int NAV_ABOUT_US = R.id.nav_aboutUs;
-
-    BottomNavigationView bottomNavigationView;
-    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,29 +44,44 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-                switch (menuItem.getItemId()) {
-                    case NAV_HOME:
+                /*switch (item.getItemId()) {
+                    case R.id.nav_home:
                         loadFragment(new HomeFragment(), false);
                         return true;
 
-                    case NAV_MESSAGE:
+                    case R.id.nav_message:
                         loadFragment(new MessageFragment(), false);
                         return true;
 
-                    case NAV_CHANGE_KEY:
+                    case R.id.nav_changeKey:
                         loadFragment(new SecretChangeFragment(), false);
                         return false;
 
-                    case NAV_ABOUT_US:
+                    case R.id.nav_aboutUs:
                         loadFragment(new AboutUsFragment(), false);
                         return false;
 
                     default:
                         Toast.makeText(MainActivity.this, "Default Clicked", Toast.LENGTH_SHORT).show();
+                        return false;
+                }*/
 
+                if (menuItem.getItemId() == R.id.nav_home) {
+                    loadFragment(new HomeFragment(), false);
+                    return true;
+                } else if (menuItem.getItemId() == R.id.nav_message) {
+                    loadFragment(new MessageFragment(), false);
+                    return true;
+                } else if (menuItem.getItemId() == R.id.nav_changeKey) {
+                    loadFragment(new SecretChangeFragment(), false);
+                    return false;
+                } else if (menuItem.getItemId() == R.id.nav_aboutUs) {
+                    loadFragment(new AboutUsFragment(), false);
+                    return false;
+                } else {
+                    Toast.makeText(MainActivity.this, "Default Clicked", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
-                return false;
             }
         });
         bottomNavigationView.setSelectedItemId(R.id.nav_home);

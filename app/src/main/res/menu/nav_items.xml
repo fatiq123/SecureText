@@ -3,23 +3,18 @@
 
     <item android:id="@+id/nav_home"
         android:icon="@drawable/ic_home"
-        android:title="Home">
-    </item>
+        android:title="Home"/>
 
     <item android:id="@+id/nav_message"
         android:icon="@drawable/ic_message"
-        android:title="Messages">
-    </item>
+        android:title="Messages"/>
 
     <item android:id="@+id/nav_changeKey"
         android:icon="@drawable/ic_tools"
-        android:title="Tools">
-    </item>
+        android:title="Tools"/>
 
     <item android:id="@+id/nav_aboutUs"
         android:icon="@drawable/ic_about_us"
-        android:title="About Us">
-    </item>
-
+        android:title="About Us"/>
 
 </menu>
