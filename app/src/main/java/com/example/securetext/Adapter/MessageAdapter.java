@@ -119,7 +119,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.myViewHo
             btnDelete = itemView.findViewById(R.id.btnDelete);
 
 
-
         }
     }
 
