@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 public class SecretChangeFragment extends Fragment {
 
-    private Button btnSaveKey, btnEnableDisableMessage, btnDeleteAllMessage, btnEnableLock;
+    private Button btnSaveKey, btnEnableDisableMessage, btnEnableLock, btnDeleteAllMessage;
     private EditText txtKey;
     private TextView txtWarning;
 
@@ -47,9 +47,9 @@ public class SecretChangeFragment extends Fragment {
         txtWarning = view.findViewById(R.id.txtWarning);
 
         btnSaveKey = view.findViewById(R.id.btnSaveKey);
-        btnDeleteAllMessage = view.findViewById(R.id.btnDeleteAllMessage);
-        btnEnableLock = view.findViewById(R.id.btnEnableLock);
         btnEnableDisableMessage = view.findViewById(R.id.btnEnableDisableMessage);
+        btnEnableLock = view.findViewById(R.id.btnEnableLock);
+        btnDeleteAllMessage = view.findViewById(R.id.btnDeleteAllMessage);
 
 
         btnSaveKey.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +104,8 @@ public class SecretChangeFragment extends Fragment {
 
                             }
                         })
-                        .setIcon(status ? R.drawable.ic_enable : R.drawable.ic_disable);
+                        .setIcon(status ? R.drawable.ic_enable : R.drawable.ic_disable)
+                        .show();
             }
         });
 
@@ -118,7 +119,7 @@ public class SecretChangeFragment extends Fragment {
                         .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                database.mainDao().getAllMessages();
+                                database.mainDao().deleteAllMessages();
                                 Toast.makeText(getContext(), "All messages deleted", Toast.LENGTH_SHORT).show();
                             }
                         })
@@ -128,11 +129,12 @@ public class SecretChangeFragment extends Fragment {
 
                             }
                         })
-                        .setIcon(R.drawable.ic_delete);
+                        .setIcon(R.drawable.ic_delete)
+                        .show();
             }
         });
 
-        btnSaveKey.setOnClickListener(new View.OnClickListener() {
+        btnEnableLock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String message, dialogMessage, dialogTitle;
@@ -168,7 +170,8 @@ public class SecretChangeFragment extends Fragment {
 
                             }
                         })
-                        .setIcon(status ? R.drawable.ic_enable: R.drawable.ic_disable);
+                        .setIcon(status ? R.drawable.ic_enable: R.drawable.ic_disable)
+                        .show();
 
             }
         });

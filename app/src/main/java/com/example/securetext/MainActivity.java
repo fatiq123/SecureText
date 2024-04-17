@@ -96,10 +96,10 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 } else if (menuItem.getItemId() == R.id.nav_changeKey) {
                     loadFragment(new SecretChangeFragment(), false);
-                    return false;
+                    return true;
                 } else if (menuItem.getItemId() == R.id.nav_aboutUs) {
                     loadFragment(new AboutUsFragment(), false);
-                    return false;
+                    return true;
                 } else {
                     Toast.makeText(MainActivity.this, "Default Clicked", Toast.LENGTH_SHORT).show();
                     return false;
