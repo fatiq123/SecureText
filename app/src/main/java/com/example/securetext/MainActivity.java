@@ -22,6 +22,7 @@ import com.example.securetext.Model.Key;
 import com.example.securetext.Utility.AuthenticatorTask;
 import com.example.securetext.Utility.FingerPrintAuthenticator;
 import com.example.securetext.fragments.AboutUsFragment;
+import com.example.securetext.fragments.EncryptionFragment;
 import com.example.securetext.fragments.HomeFragment;
 import com.example.securetext.fragments.MessageFragment;
 import com.example.securetext.fragments.SecretChangeFragment;
@@ -89,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 if (menuItem.getItemId() == R.id.nav_home) {
-                    loadFragment(new HomeFragment(), false);
+//                    loadFragment(new HomeFragment(), false);
+                    loadFragment(new EncryptionFragment(), false);
                     return true;
                 } else if (menuItem.getItemId() == R.id.nav_message) {
                     loadFragment(new MessageFragment(), false);

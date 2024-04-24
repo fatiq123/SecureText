@@ -50,4 +50,10 @@ dependencies {
 
     // Java language implementation
     implementation("androidx.biometric:biometric:1.1.0")
+
+
+    // RxJava
+    implementation("io.reactivex.rxjava2:rxjava:2.2.19")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+
 }
